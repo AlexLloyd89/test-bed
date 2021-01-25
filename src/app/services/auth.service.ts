@@ -14,8 +14,13 @@ export class AuthService {
     let params = new HttpParams()
     params = params.append('username', username)
     params = params.append('password',password)
-
-    return this.http.get<string>(`${environment.baseUrl}/login`, {params})
+    const headers = {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }
+    }
+    return this.http.get<string>(`${environment.baseUrl}/login`, {headers: headers.headers, params})
   }
 
 }
