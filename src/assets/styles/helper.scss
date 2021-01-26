@@ -18,6 +18,10 @@
   align-items: center !important;
 }
 
+.align-baseline{
+  align-items: baseline !important;
+}
+
 .direction-column{
   flex-direction: column !important;
 }
@@ -26,6 +30,9 @@
   flex-wrap: wrap !important;
 }
 
+.full-flex{
+  flex: 1 1 auto;
+}
 
 .page-wrapper{
   padding: 50px;
@@ -35,6 +42,14 @@
   opacity: 0 !important;
 }
 
+.p-2{
+  padding: 20px !important;
+}
+
 .pb-2{
   padding-bottom: 20px !important
+}
+
+.mr-2{
+  margin-right: 20px !important;
 }

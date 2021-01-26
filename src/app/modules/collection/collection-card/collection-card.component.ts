@@ -28,7 +28,10 @@ export class CollectionCardComponent implements OnInit {
   }
 
   viewDetails(gameId: number){
-    this.dialog.open(DetailsDialogComponent, {data:{ gameId }})
+    this.dialog.open(DetailsDialogComponent, {
+      panelClass:'details-dialog',
+      data:{ gameId }
+    })
   }
 
 }

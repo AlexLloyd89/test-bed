@@ -1,1 +1,11 @@
+<mat-toolbar *ngIf="token" color='primary'>
+  <span class="title">Game Searcher</span>
+  <span class="full-flex"></span>
+  <button (click)='navigate()' mat-icon-button aria-label="Navigation icon">
+    <mat-icon>{{route.includes("/collection") ? "search" : "apps"}}</mat-icon>
+  </button>
+  <button matTooltip='Logout' (click)='logout()' mat-icon-button aria-label="Logout icon">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
 <router-outlet></router-outlet>

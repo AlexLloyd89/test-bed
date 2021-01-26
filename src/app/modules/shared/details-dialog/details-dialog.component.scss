@@ -1,9 +1,9 @@
-h2{
+h2 {
   margin-bottom: 0px;
   margin-right: 20px;
 }
 
-img{
+img {
   height: 200px;
   width: auto;
 }
@@ -15,6 +15,36 @@ img{
   opacity: 0.5;
 }
 
-.overview-container{
+.overview-container {
   margin-left: 20px;
+}
+
+.overview {
+  max-height: 155px;
+  overflow: auto;
+}
+
+.header {
+  padding: 20px;
+  background: #3f51b540;
+  border-bottom: 1px solid #3f51b54f;
+}
+
+
+.released{
+  opacity: 0.5;
+  font-size: 12px;
+  text-align: center;
+}
+
+.footer{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: #e1e1e1;
+  align-items: center;
+  p{
+    margin: 0px;
+    opacity: 0.8;
+  }
 }
