@@ -1,4 +1,28 @@
-<p (click)='route("/search")'>search route</p>
-<p (click)='route("/shouldbenothing")'>not found route</p>
+<div class="login-page-wrapper">
+<div class="overlay">
+  <div class="login-container mat-elevation-z8">
+    <mat-form-field [formGroup]='loginForm' appearance="standard">
+      <mat-label>Username</mat-label>
+      <input formControlName="username" matInput />
+      <mat-error *ngIf="hasError('username', 'required')">
+        Please enter a valid username
+      </mat-error>
+    </mat-form-field>
 
-<button (click)='login()'>Sign in</button>
+    <mat-form-field [formGroup]='loginForm' appearance="standard">
+      <mat-label>Password </mat-label>
+      <input
+      [type]="displayPassword ? 'text' : 'password'"
+      formControlName="password"
+      matInput />
+      <mat-icon class="cursor-pointer" (click)="showPassword()" matSuffix>
+        {{displayPassword ? "visibility" : "visibility_off"}}</mat-icon>
+        <mat-error *ngIf="hasError('password', 'required')">
+          Please enter a valid password
+        </mat-error>
+      </mat-form-field>
+
+      <button [disabled]='loginForm.invalid' mat-raised-button color='primary'(click)='login()'>Login</button>
+    </div>
+  </div>
+  </div>
