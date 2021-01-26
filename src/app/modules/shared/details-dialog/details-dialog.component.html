@@ -1,0 +1,24 @@
+<ng-container *ngIf="game">
+  <div class="display-flex justify-between align-center pb-2">
+    <div class="display-flex direction-column">
+      <h2>{{game.title || 'N/A'}}</h2>
+        <mat-chip-list>
+          <mat-chip *ngFor="let genre of game.genres">{{genre}}</mat-chip>
+        </mat-chip-list>
+    </div>
+    <button mat-dialog-close mat-mini-fab color="primary" aria-label="close button">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="display-flex align-center">
+    <img *ngIf="game.imageUrl" src={{game?.imageUrl}}/>
+    <mat-icon class="img-replacement" *ngIf="!game.imageUrl">videogame_asset</mat-icon>
+    <div class="overview-container">
+      <h4><b>Overview:</b></h4>
+      {{game.overview || "No overview available"}}
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <h4>Additional information</h4>
+
+</ng-container>

@@ -1,0 +1,65 @@
+.card-wrapper {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  width: 210px;
+  margin: 10px 10px 10px 0px;
+  transition: 0.5s;
+  height: 300px;
+  border: 1px solid #4141412e;
+  position: relative;
+  img {
+    height: 200px;
+    width: auto;
+  }
+  .img-replacement {
+    height: 200px;
+    width: auto;
+    font-size: 200px;
+    opacity: 0.5;
+  }
+
+  &:hover {
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+      0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    transition: 0.5s;
+  }
+  p {
+    opacity: 0.6;
+  }
+  h4 {
+    font-weight: 500;
+  }
+}
+
+.text-container {
+  text-align: center;
+}
+.delete {
+  position: absolute;
+  right: 14px;
+}
+.delete-hover {
+  position: absolute;
+  right: 14px;
+  color: rgba(255, 0, 0, 0.61);
+  cursor: pointer;
+  z-index: 10;
+  bottom: 5px;
+}
+
+.details {
+  position: absolute;
+  left: 14px;
+}
+
+.details-hover {
+  position: absolute;
+  right: 14px;
+  color: rgba(0, 140, 255, 0.61);
+  cursor: pointer;
+  z-index: 10;
+  bottom: 5px;
+}

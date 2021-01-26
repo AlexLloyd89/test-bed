@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       this.authSvc.login(this.loginForm.value.username, this.loginForm.value.password).subscribe(response=>{
         //on success, set userToken and navigate to correct page
         this.authSvc.userToken$.next(response);
-        this.router.navigate(['/search'])
+        this.router.navigate(['/collection'])
       }, err=>{
         //on error, display a snackbar to user
         this.snack.open('Invalid username or password', 'close', {duration: 3000})

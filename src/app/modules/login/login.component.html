@@ -16,7 +16,8 @@
       formControlName="password"
       matInput />
       <mat-icon class="cursor-pointer" (click)="showPassword()" matSuffix>
-        {{displayPassword ? "visibility" : "visibility_off"}}</mat-icon>
+        {{displayPassword ? "visibility" : "visibility_off"}}
+      </mat-icon>
         <mat-error *ngIf="hasError('password', 'required')">
           Please enter a valid password
         </mat-error>

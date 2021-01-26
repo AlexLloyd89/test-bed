@@ -8,7 +8,10 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar'
-
+import {MatDividerModule} from "@angular/material/divider"
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog'
+import{MatChipsModule}from"@angular/material/chips"
 
 @NgModule({
   declarations: [],
@@ -19,7 +22,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     MatIconModule,
     MatButtonModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDividerModule,
+    MatTooltipModule,
+    MatDialogModule,
+    MatChipsModule
   ],
   exports:[
     MatFormFieldModule,
@@ -27,7 +34,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     MatIconModule,
     MatButtonModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDividerModule,
+    MatTooltipModule,
+    MatDialogModule,
+    MatChipsModule
   ]
 })
 export class MaterialModule { }

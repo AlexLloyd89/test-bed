@@ -10,7 +10,12 @@ const routes: Routes = [
   {
     path: "search",
     loadChildren: () => import('./modules/search/search.module').then(m => m.SearchModule),
-    canActivateChild:[AuthGuard]
+    canActivateChild:[AuthGuard],
+  },
+  {
+    path: "collection",
+    loadChildren: () => import('./modules/collection/collection.module').then(m => m.CollectionModule),
+    canActivateChild:[AuthGuard],
   },
   {
     path: "**",
