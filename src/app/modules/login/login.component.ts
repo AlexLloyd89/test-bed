@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
   displayPassword: boolean = false;
+  loading: boolean = false;
   loginForm: FormGroup = new FormGroup({
     username: new FormControl(null, Validators.required),
     password: new FormControl(null, Validators.required),
@@ -28,11 +29,14 @@ export class LoginComponent implements OnInit {
     //-username: harry potter
     //-password: hedwig
     if(this.loginForm.valid){
+      this.loading = true
       this.authSvc.login(this.loginForm.value.username, this.loginForm.value.password).subscribe(response=>{
         //on success, set userToken and navigate to correct page
         this.authSvc.userToken$.next(response);
+        this.loading = false
         this.router.navigate(['/collection'])
       }, err=>{
+      this.loading = false
         //on error, display a snackbar to user
         this.snack.open('Invalid username or password', 'close', {duration: 3000})
       })

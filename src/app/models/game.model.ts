@@ -1,3 +1,5 @@
+import { Platform } from './platform.model';
+
 export interface GameDetail {
   gameId: number;
   title: string;
@@ -9,7 +11,3 @@ export interface GameDetail {
   imageUrl?: string;
 }
 
-export interface Platform {
-  platformId: number;
-  name: string;
-}

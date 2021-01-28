@@ -38,14 +38,13 @@
 .text-container {
   text-align: center;
 }
-.delete {
+.action {
   position: absolute;
   right: 14px;
 }
-.delete-hover {
+.action-hover {
   position: absolute;
   right: 14px;
-  color: rgba(255, 0, 0, 0.61);
   cursor: pointer;
   z-index: 10;
   bottom: 5px;

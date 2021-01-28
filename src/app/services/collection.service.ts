@@ -18,4 +18,8 @@ export class CollectionService {
   deleteItem(gameId: number) {
     return this.http.delete(`${environment.baseUrl}/Collection/${gameId}`)
   }
+
+  addItem(gameId:number){
+    return this.http.post(`${environment.baseUrl}/Collection/${gameId}`, null)
+  }
 }

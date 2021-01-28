@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 import { TruncatePipe } from 'src/app/pipes/truncate.pipe';
 import { DetailsDialogComponent } from './details-dialog/details-dialog.component';
 import { MaterialModule } from '../material/material.module';
+import { GameCardComponent } from './game-card/game-card.component';
 
 
 
 @NgModule({
-  declarations: [TruncatePipe, DetailsDialogComponent],
+  declarations: [TruncatePipe, DetailsDialogComponent, GameCardComponent],
   imports: [
     CommonModule,
     MaterialModule
   ],
-  exports: [TruncatePipe]
+  exports: [TruncatePipe, GameCardComponent]
 })
 export class SharedModule { }

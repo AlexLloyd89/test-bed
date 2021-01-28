@@ -23,7 +23,9 @@
         </mat-error>
       </mat-form-field>
 
-      <button [disabled]='loginForm.invalid' mat-raised-button color='primary'(click)='login()'>Login</button>
+      <button [disabled]='loginForm.invalid || loading' mat-raised-button color='primary'(click)='login()'>
+        {{loading ?'Loading...' : 'Login'}}
+      </button>
     </div>
   </div>
   </div>

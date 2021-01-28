@@ -1,8 +1,8 @@
 <div class="card-wrapper" (mouseenter)='hoveredCard = true' (mouseleave)='hoveredCard = false'>
   <mat-icon (click)='viewDetails(game.gameId)' matTooltip='View details' class='details' [ngClass]="{'details-hover': hoveredCard, 'opacity-none': !hoveredCard}">details</mat-icon>
- <mat-icon matTooltip='Delete from collection' class="delete" [ngClass]="{'delete-hover': hoveredCard, 'opacity-none': !hoveredCard}"
-  (click)='delete(game.gameId)'>
-  delete
+ <mat-icon matTooltip='Delete from collection' class="action" [ngClass]="{'action-hover': hoveredCard, 'opacity-none': !hoveredCard}" [ngStyle]='{color: searchCard ? "rgba(0, 255, 98, 0.61)" : "rgba(255, 0, 0, 0.61)"}'
+  (click)='action(game.gameId)'>
+ {{searchCard ? 'add' : 'delete'}}
 </mat-icon>
  <img *ngIf="game.imageUrl" src={{game.imageUrl}}/>
  <mat-icon class="img-replacement" *ngIf="!game.imageUrl">videogame_asset</mat-icon>

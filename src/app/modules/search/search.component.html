@@ -1,1 +1,31 @@
-<p>search works!</p>
+<div class="page-wrapper">
+<div class="display-flex align-center">
+  <mat-form-field class='custom-field-width' [formGroup]='searchForm' appearance="standard">
+    <mat-label>Search for games</mat-label>
+    <input formControlName="search" matInput />
+    <mat-error *ngIf="hasError('search', 'required')">
+      Search term is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class='adjust-autocomplete-height' [formGroup]='searchForm'>
+    <mat-label>Select Platform</mat-label>
+    <input type="text" matInput formControlName="platform" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <button [disabled]='searchForm.invalid' (click)='search()' color='primary' mat-flat-button>Search</button>
+</div>
+
+<h1>Found Games</h1>
+<div *ngIf="foundGames?.length > 0" class="display-flex wrap">
+<app-game-card *ngFor="let game of foundGames" [game]='game' [searchCard]='true' (emitAction)='handleAction($event)'></app-game-card>
+</div>
+<ng-container *ngIf="foundGames.length < 1">
+  No games found
+</ng-container>
+</div>
