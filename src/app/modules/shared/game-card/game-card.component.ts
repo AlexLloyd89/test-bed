@@ -1,8 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Collection } from 'src/app/models/collection.model';
-import { CollectionService } from 'src/app/services/collection.service';
 import { DetailsDialogComponent } from '../details-dialog/details-dialog.component';
 
 @Component({
@@ -16,7 +14,7 @@ export class GameCardComponent {
   @Output() emitAction = new EventEmitter()
   hoveredCard: boolean = false
 
-  constructor(private collectionSvc: CollectionService, private snackbar: MatSnackBar, private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog) {}
 
 
   action(gameId: number) {

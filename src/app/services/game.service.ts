@@ -9,14 +9,15 @@ import { GameDetail } from '../models/game.model';
   providedIn: 'root'
 })
 export class GameService {
+  apiUrl = `${environment.baseUrl}/Games`
 
   constructor(private http: HttpClient) { }
 
   getGameDetail(gameId: number): Observable<GameDetail>{
-    return this.http.get<GameDetail>(`${environment.baseUrl}/Games/${gameId}`)
+    return this.http.get<GameDetail>(`${this.apiUrl}/${gameId}`)
   }
 
   searchGames(gameName: string, platformId?: number): Observable<Collection[]>{
-    return this.http.get<Collection[]>(`${environment.baseUrl}/Games/search/${gameName}/?platformId=${platformId || 0}`)
+    return this.http.get<Collection[]>(`${this.apiUrl}/search/${gameName}/?platformId=${platformId || 0}`)
   }
 }

@@ -8,18 +8,19 @@ import { Collection } from '../models/collection.model';
   providedIn: 'root'
 })
 export class CollectionService {
+  apiUrl: string = `${environment.baseUrl}/Collection`
 
   constructor(private http: HttpClient) { }
 
   getCollection():Observable<Collection[]>{
-    return this.http.get<Collection[]>(`${environment.baseUrl}/Collection`)
+    return this.http.get<Collection[]>(`${this.apiUrl}`)
   }
 
   deleteItem(gameId: number) {
-    return this.http.delete(`${environment.baseUrl}/Collection/${gameId}`)
+    return this.http.delete(`${this.apiUrl}/${gameId}`)
   }
 
-  addItem(gameId:number){
-    return this.http.post(`${environment.baseUrl}/Collection/${gameId}`, null)
+  addItem(gameId:number) {
+    return this.http.post(`${this.apiUrl}/${gameId}`, null)
   }
 }

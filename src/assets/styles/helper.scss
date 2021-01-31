@@ -35,7 +35,15 @@
 }
 
 .page-wrapper{
-  padding: 20px 50px;
+  background: #fafafa;
+  padding: 25px;
+  margin: 25px;
+  border-radius: 5px;
+}
+
+.inner-wrapper{
+  max-height: 690px;
+  overflow-y: auto;
 }
 
 .opacity-none{

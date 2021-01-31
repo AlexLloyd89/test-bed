@@ -28,7 +28,6 @@ export class AppComponent implements OnInit {
   }
 
   logout(){
-    this.router.navigate([''])
-    this.authSvc.userToken$.next('')
+  this.authSvc.logout()
   }
 }

@@ -1,6 +1,8 @@
 <div class="card-wrapper" (mouseenter)='hoveredCard = true' (mouseleave)='hoveredCard = false'>
   <mat-icon (click)='viewDetails(game.gameId)' matTooltip='View details' class='details' [ngClass]="{'details-hover': hoveredCard, 'opacity-none': !hoveredCard}">details</mat-icon>
- <mat-icon matTooltip='Delete from collection' class="action" [ngClass]="{'action-hover': hoveredCard, 'opacity-none': !hoveredCard}" [ngStyle]='{color: searchCard ? "rgba(0, 255, 98, 0.61)" : "rgba(255, 0, 0, 0.61)"}'
+ <mat-icon [matTooltip]='searchCard ? "Add item to collection" : "Delete from collection"' class="action"
+  [ngClass]="{'action-hover': hoveredCard, 'opacity-none': !hoveredCard}"
+   [ngStyle]='{color: searchCard ? "rgb(32 195 74)" : "rgba(255, 0, 0, 0.61)"}'
   (click)='action(game.gameId)'>
  {{searchCard ? 'add' : 'delete'}}
 </mat-icon>
@@ -9,7 +11,7 @@
  <mat-divider></mat-divider>
  <div class="text-container">
    <h4 matTooltip='{{game.title.length > 19? game.title : ""}}'>{{game.title || 'No title' | truncate: [20]}}</h4>
-   <p  matTooltip='{{game.platform.length > 19? game.platform : ""}}'>
+   <p matTooltip='{{game.platform.length > 19? game.platform : ""}}'>
      Platform: {{game.platform || 'N/A' | truncate: [20]}}
   </p>
  </div>

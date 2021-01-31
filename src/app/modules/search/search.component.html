@@ -22,10 +22,18 @@
 </div>
 
 <h1>Found Games</h1>
-<div *ngIf="foundGames?.length > 0" class="display-flex wrap">
-<app-game-card *ngFor="let game of foundGames" [game]='game' [searchCard]='true' (emitAction)='handleAction($event)'></app-game-card>
-</div>
-<ng-container *ngIf="foundGames.length < 1">
-  No games found
+<ng-container *ngIf="!loading">
+  <div *ngIf="foundGames?.length > 0" class="display-flex wrap inner-wrapper">
+    <app-game-card
+    *ngFor="let game of foundGames" [game]='game' [searchCard]='true' (emitAction)='handleAction($event)'>
+    </app-game-card>
+  </div>
+  <ng-container *ngIf="foundGames.length < 1">
+    No games found
+  </ng-container>
 </ng-container>
+
+  <div *ngIf="loading" class="display-flex align-center justify-center">
+    <mat-spinner color='primary'></mat-spinner>
+  </div>
 </div>
