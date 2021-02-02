@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="footer">
-      <p class="mr-2">Published by: <span *ngFor="let item of game.publishers">{{item}}</span></p>
+      <p class="mr-2">Published by: <span *ngFor="let item of game.publishers">{{item || "N/A"}}</span></p>
       <p>Platform: {{game.platform.name}}</p>
     </div>
 </ng-container>

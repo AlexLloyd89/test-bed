@@ -1,6 +1,6 @@
 <div class="page-wrapper">
 <div class="display-flex align-center">
-  <mat-form-field class='custom-field-width' [formGroup]='searchForm' appearance="standard">
+  <mat-form-field [formGroup]='searchForm' appearance="standard">
     <mat-label>Search for games</mat-label>
     <input formControlName="search" matInput />
     <mat-error *ngIf="hasError('search', 'required')">
